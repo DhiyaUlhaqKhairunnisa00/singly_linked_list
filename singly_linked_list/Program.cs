@@ -85,8 +85,28 @@ namespace single_linked_list
                 return (false);
             else
                 return (true);
-
         }
-        
+
+        /*Method untuk Travers/mengunjungi dan membaca isi list*/
+        public void traverse()
+        {
+            if (listEmpty())
+                Console.WriteLine("\nList Kosong. \n");
+            else
+            {
+                Console.WriteLine("\nData di dalam list adalah : \n");
+                Node currentNode;
+                for (currentNode = START; currentNode != null; currentNode = currentNode.next)
+                    Console.Write(currentNode.noMhs + " " + currentNode + "\n");
+                Console.WriteLine();
+            }
+        }
+        public bool listEmpty()
+        {
+            if (START == null)
+                return true;
+            else
+                return false;
+        }
     }
 }
