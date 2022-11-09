@@ -108,5 +108,17 @@ namespace single_linked_list
             else
                 return false;
         }
+
+         class Program
+        {
+            static void Main(string[] args)
+            {
+                List obj = new List();
+                while (true)
+                {
+
+                }
+            }
+        }
     }
 }
