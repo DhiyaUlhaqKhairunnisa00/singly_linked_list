@@ -29,12 +29,33 @@ namespace single_linked_list
 
             if (START == null || nim <= START.noMhs)
             {
-                Console.WriteLine("\nNomer Mahasiswa sama tidak diijinkan\n");
+                if ((START == null) && (nim == START.noMhs))
+                {
+                    Console.WriteLine("\nNomer Mahasiswa sama tidak diijinkan\n");
+                    return;
+                }
+                nodeBaru.next = START;
+                START = nodeBaru;
                 return;
             }
-            nodeBaru.next = START;
-            START = nodeBaru;
-            return;
+            Node previous, current;
+            previous = START;
+            current = START;
+
+            while ((current != null) && (nim <= current.noMhs))
+            {
+                if (nim == current.noMhs)
+                {
+                    Console.WriteLine("/nNomer mahasiswa tidak diijinkan\n");
+                    return ;
+                }
+                previous = current;
+                current = current.next;
+            }
+
+            nodeBaru.next = current;
+            previous.next = nodeBaru;
         }
+        
     }
 }
