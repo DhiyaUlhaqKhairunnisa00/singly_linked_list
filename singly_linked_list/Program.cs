@@ -27,6 +27,14 @@ namespace single_linked_list
             nodeBaru.noMhs = nim;
             nodeBaru.nama = nm;
 
+            if (START == null || nim <= START.noMhs)
+            {
+                Console.WriteLine("\nNomer Mahasiswa sama tidak diijinkan\n");
+                return;
+            }
+            nodeBaru.next = START;
+            START = nodeBaru;
+            return;
         }
     }
 }
